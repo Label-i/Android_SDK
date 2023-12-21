@@ -1,3 +1,3 @@
-package org.labeli.serversdk
+package org.labeli.serversdk.dto
 
 internal interface Gettable { }

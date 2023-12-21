@@ -1,7 +1,9 @@
-package org.labeli.serversdk
+package org.labeli.serversdk.dto
 
-internal interface Postable: Cloneable {
-     public override fun clone(): Postable {
-        return super.clone() as Postable
-    }
+import org.labeli.swift.CustomStringConvertible
+import org.labeli.swift.Equatable
+import org.labeli.swift.Hashable
+
+internal interface Postable: Cloneable, Equatable, Hashable, CustomStringConvertible {
+    public override fun clone(): Any
 }
