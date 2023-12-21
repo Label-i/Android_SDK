@@ -1,4 +1,6 @@
 package org.labeli.serversdk.client
 
-interface DisplayableError {
+public interface DisplayableError {
+    public val title: String
+    public val message: String
 }
