@@ -1,4 +1,7 @@
 package org.labeli.serversdk.endpoint
 
-class EndPoint {
+internal class EndPoint {
+    companion object {
+        internal val auth = AuthResource("auth")
+    }
 }

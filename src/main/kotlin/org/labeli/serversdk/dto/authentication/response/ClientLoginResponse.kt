@@ -2,7 +2,7 @@ package org.labeli.serversdk.dto.authentication.response
 
 import org.labeli.serversdk.dto.Gettable
 import org.labeli.swift.Identifiable
-import java.util.UUID
+import java.util.*
 
 public class ClientLoginResponse: Gettable {
     public val client: ClientResponse

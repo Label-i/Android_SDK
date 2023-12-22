@@ -1,7 +1,6 @@
 package org.labeli.serversdk.dto.authentication.response
 
 import org.labeli.serversdk.dto.Gettable
-import org.labeli.serversdk.dto.authentication.request.RefreshTokenRequest
 import org.labeli.swift.Identifiable
 import java.util.*
 
