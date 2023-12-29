@@ -11,20 +11,16 @@ internal class RefreshTokenRequest: Postable {
         this.refreshToken = refreshToken
     }
 
-    override fun equals(other: Any?): Boolean {
-        return (other is RefreshTokenRequest) &&
+    override fun equals(other: Any?): Boolean =
+        (other is RefreshTokenRequest) &&
                 refreshToken == other.refreshToken
-    }
 
-    override fun hashCode(): Int {
-        return Objects.hash(refreshToken)
-    }
+    override fun hashCode(): Int =
+        Objects.hash(refreshToken)
 
-    override fun toString(): String {
-        return "RefreshTokenRequest(refreshToken: $refreshToken)"
-    }
+    override fun toString(): String =
+        "RefreshTokenRequest(refreshToken: $refreshToken)"
 
-    override fun clone(): RefreshTokenRequest {
-        return RefreshTokenRequest(refreshToken.clone())
-    }
+    override fun clone(): RefreshTokenRequest =
+        RefreshTokenRequest(refreshToken.clone())
 }

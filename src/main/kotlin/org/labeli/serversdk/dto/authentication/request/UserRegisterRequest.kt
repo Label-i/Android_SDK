@@ -21,30 +21,26 @@ internal class UserRegisterRequest: Postable {
         this.isAdmin = isAdmin
     }
 
-    override fun equals(other: Any?): Boolean {
-        return (other is UserRegisterRequest) &&
-                fullname == other.fullname &&
-                email == other.email &&
-                password == other.password &&
-                rePassword == other.rePassword &&
-                canSell == other.canSell &&
-                isAdmin == other.isAdmin
-    }
+    override fun equals(other: Any?): Boolean =
+         (other is UserRegisterRequest) &&
+                 fullname == other.fullname &&
+                 email == other.email &&
+                 password == other.password &&
+                 rePassword == other.rePassword &&
+                 canSell == other.canSell &&
+                 isAdmin == other.isAdmin
 
-    override fun hashCode(): Int {
-        return Objects.hash(fullname, email, password, rePassword, canSell, isAdmin)
-    }
+    override fun hashCode(): Int =
+        Objects.hash(fullname, email, password, rePassword, canSell, isAdmin)
 
-    override fun toString(): String {
-        return "UserRegisterRequest(fullname: $fullname, email: $email, password: $password, rePassword: $rePassword, canSell: $canSell, isAdmin: $isAdmin"
-    }
+    override fun toString(): String =
+        "UserRegisterRequest(fullname: $fullname, email: $email, password: $password, rePassword: $rePassword, canSell: $canSell, isAdmin: $isAdmin"
 
-    override fun clone(): Any {
-        return UserRegisterRequest(fullname.clone(),
-                                   email.clone(),
-                                   password.clone(),
-                                   rePassword.clone(),
-                                   canSell,
-                                   isAdmin)
-    }
+    override fun clone(): Any =
+        UserRegisterRequest(fullname.clone(),
+                            email.clone(),
+                            password.clone(),
+                            rePassword.clone(),
+                            canSell,
+                            isAdmin)
 }

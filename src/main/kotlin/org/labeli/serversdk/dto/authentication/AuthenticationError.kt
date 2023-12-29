@@ -45,7 +45,7 @@ internal enum class AuthenticationError(override val rawValue: String): DTOError
         USER_NOT_FOUND -> "Server Error"
     }
 
-    override val message: String get() = this.rawValue
+    override val message: String by ::rawValue
 
     override val beReported: Boolean get() = when (this) {
         EMPTY_EMAIL,

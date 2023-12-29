@@ -17,26 +17,22 @@ internal class ClientRegisterRequest: Postable {
         this.rePassword = rePassword
     }
 
-    override fun equals(other: Any?): Boolean {
-        return other is ClientRegisterRequest &&
+    override fun equals(other: Any?): Boolean =
+        other is ClientRegisterRequest &&
                 fullname == other.fullname &&
                 email == other.email &&
                 password == other.password &&
                 rePassword == other.rePassword
-    }
 
-    override fun hashCode(): Int {
-        return Objects.hash(fullname, email, password, rePassword)
-    }
+    override fun hashCode(): Int =
+        Objects.hash(fullname, email, password, rePassword)
 
-    override fun toString(): String {
-        return "ClientRegisterRequest(fullname: $fullname, email: $email, password: $password, rePassword: $rePassword"
-    }
+    override fun toString(): String =
+        "ClientRegisterRequest(fullname: $fullname, email: $email, password: $password, rePassword: $rePassword"
 
-    override fun clone(): ClientRegisterRequest {
-        return ClientRegisterRequest(fullname.clone(),
-                                     email.clone(),
-                                     password.clone(),
-                                     rePassword.clone())
-    }
+    override fun clone(): ClientRegisterRequest =
+        ClientRegisterRequest(fullname.clone(),
+                              email.clone(),
+                              password.clone(),
+                              rePassword.clone())
 }
