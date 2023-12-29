@@ -1,7 +1,9 @@
 package org.labeli.serversdk.dto.authentication.response
 
+import kotlinx.serialization.Serializable
 import org.labeli.serversdk.dto.Gettable
 
+@Serializable
 public class ClientPrivateResponse: Gettable {
     public val email: String
     public val fullname: String

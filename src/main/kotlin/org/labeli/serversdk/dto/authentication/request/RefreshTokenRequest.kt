@@ -1,9 +1,11 @@
 package org.labeli.serversdk.dto.authentication.request
 
+import kotlinx.serialization.Serializable
 import org.labeli.serversdk.dto.Postable
 import org.labeli.serversdk.extensions.clone
 import java.util.*
 
+@Serializable
 internal class RefreshTokenRequest: Postable {
     private val refreshToken: String
 

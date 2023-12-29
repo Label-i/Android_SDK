@@ -1,4 +1,5 @@
 package org.labeli.serversdk.client
 
-class Client {
+public class Client {
+
 }

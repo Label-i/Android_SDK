@@ -1,5 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.9.21'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.21'
 }
 
 group = 'org.labeli.serversdk'
@@ -11,7 +12,7 @@ repositories {
 
 dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0") // http client
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1") // JSON encoder and decoder
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2") // JSON encoder and decoder
 
     testImplementation('org.jetbrains.kotlin:kotlin-test:1.8.10')
 }

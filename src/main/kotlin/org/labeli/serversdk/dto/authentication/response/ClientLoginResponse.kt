@@ -1,9 +1,13 @@
 package org.labeli.serversdk.dto.authentication.response
 
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.Serializer
+import org.labeli.serversdk.UUIDSerializer
 import org.labeli.serversdk.dto.Gettable
 import org.labeli.swift.Identifiable
 import java.util.*
 
+@Serializable
 public class ClientLoginResponse: Gettable {
     public val client: ClientResponse
     public val tokens: TokenResponse
@@ -13,7 +17,9 @@ public class ClientLoginResponse: Gettable {
         this.tokens = tokens
     }
 
+    @Serializable
     public class ClientResponse: Gettable, Identifiable {
+        @Serializable(UUIDSerializer::class)
         public override val id: UUID
         public val fullname: String
         public val email: String
