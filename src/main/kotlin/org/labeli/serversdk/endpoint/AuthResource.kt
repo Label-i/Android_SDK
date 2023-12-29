@@ -1,7 +1,6 @@
 package org.labeli.serversdk.endpoint
 
 import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
 import org.labeli.serversdk.HTTPMediaType.Application.Companion.json
 import org.labeli.serversdk.HTTPMediaType.Companion.application
 import org.labeli.serversdk.dto.authentication.request.ClientRegisterRequest
@@ -32,23 +31,22 @@ internal class AuthResource(path: String) {
                                        .delete()
                                        .build()
 
-        // TODO: Convert to json
         internal fun login(user: LoginRequest): Request =
             Request.Builder()
                    .url(path / "login")
-                   .post(user.toString(), application(json))
+                   .post(user, application(json))
                    .build()
 
         internal fun refreshToken(token: RefreshTokenRequest): Request =
             Request.Builder()
                    .url(path / "refreshTokens")
-                   .post(token.toString(), application(json))
+                   .post(token, application(json))
                    .build()
 
         internal fun register(user: UserRegisterRequest): Request =
             Request.Builder()
                    .url(path / "register")
-                   .post(user.toString(),application(json))
+                   .post(user, application(json))
                    .build()
 
         internal fun updateIsAdmin(isAdmin: Boolean, email: String): Request =
@@ -89,19 +87,19 @@ internal class AuthResource(path: String) {
         internal fun register(client: ClientRegisterRequest): Request =
             Request.Builder()
                    .url(path / "register")
-                   .post(client.toString(), application(json))
+                   .post(client, application(json))
                    .build()
 
         internal fun login(client: LoginRequest): Request =
             Request.Builder()
                    .url(path / "login")
-                   .post(client.toString(), application(json))
+                   .post(client, application(json))
                    .build()
 
         internal fun refreshToken(token: RefreshTokenRequest): Request =
             Request.Builder()
                    .url(path / "refreshTokens")
-                   .post(token.toString(), application(json))
+                   .post(token, application(json))
                    .build()
 
         internal fun updateIsMember(isMember: Boolean, email: String): Request =
