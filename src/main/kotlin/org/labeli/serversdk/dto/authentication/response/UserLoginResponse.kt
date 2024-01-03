@@ -7,9 +7,9 @@ import org.labeli.swift.Identifiable
 import java.util.*
 
 @Serializable
-public class UserLoginResponse: Gettable {
-    public val user: UserResponse
-    public val tokens: TokenResponse
+class UserLoginResponse: Gettable {
+    val user: UserResponse
+    val tokens: TokenResponse
 
     internal constructor(user: UserResponse, tokens: TokenResponse) {
         this.user = user
@@ -17,13 +17,13 @@ public class UserLoginResponse: Gettable {
     }
 
     @Serializable
-    public class UserResponse: Gettable, Identifiable {
+    class UserResponse: Gettable, Identifiable<UUID> {
         @Serializable(UUIDSerializer::class)
-        public override val id: UUID
-        public val fullname: String
-        public val email: String
-        public val canSell: Boolean
-        public val isAdmin: Boolean
+        override val id: UUID
+        val fullname: String
+        val email: String
+        val canSell: Boolean
+        val isAdmin: Boolean
 
         internal constructor(id: UUID, fullname: String, email: String, canSell: Boolean, isAdmin: Boolean) {
             this.id = id

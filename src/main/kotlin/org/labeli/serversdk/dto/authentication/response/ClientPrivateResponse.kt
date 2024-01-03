@@ -2,12 +2,14 @@ package org.labeli.serversdk.dto.authentication.response
 
 import kotlinx.serialization.Serializable
 import org.labeli.serversdk.dto.Gettable
+import org.labeli.swift.Identifiable
 
 @Serializable
-public class ClientPrivateResponse: Gettable {
-    public val email: String
-    public val fullname: String
-    public val isMember: Boolean
+class ClientPrivateResponse: Gettable, Identifiable<String> {
+    override val id by ::email
+    val email: String
+    val fullname: String
+    val isMember: Boolean
 
     internal constructor(email: String, fullname: String, isMember: Boolean) {
         this.email = email
