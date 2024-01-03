@@ -1,4 +1,4 @@
-package org.labeli.serversdk.client
+package org.labeli.serversdk
 
 internal enum class HTTPMethod(val rawValue: String) {
     GET("GET"),
